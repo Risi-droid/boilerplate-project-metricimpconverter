@@ -1,17 +1,16 @@
-const chaiHttp = require('chai-http');
-const chai = require('chai');
+const chaiHttp = require("chai-http");
+const chai = require("chai");
 let assert = chai.assert;
-const server = require('../server');
+const server = require("../server");
 
 chai.use(chaiHttp);
 
-suite('Functional Tests', function() {
-
- test("GET/api/convert?input=10L",(done)=> {
-  chai
-  .request(server)
-  .get("/api/convert?input=10L")
-  .end((req, res) => {
+suite("Functional Tests", function () {
+  test("GET /api/convert?input=10L", (done) => {
+    chai
+      .request(server)
+      .get("/api/convert?input=10L")
+      .end((req, res) => {
         assert.equal(res.status, 200);
         assert.deepEqual(res.body, {
           initNum: 10,
@@ -22,20 +21,18 @@ suite('Functional Tests', function() {
         });
         done();
       });
-});
-
- test("GET/api/convert?input=32g",(done)=> {
-  chai
-  .request(server)
-  .get("/api/convert?input=32g")
-  .end((req,res)=> {
-    assert.equal(res.status,200);
-    assert.equal(res.text, "invalid unit");
-    done();
-    });
   });
-
- test("GET /api/convert?input=3/7.2/4kg", (done) => {
+  test("GET /api/convert?input=32g", (done) => {
+    chai
+      .request(server)
+      .get("/api/convert?input=32g")
+      .end((req, res) => {
+        assert.equal(res.status, 200);
+        assert.equal(res.text, "invalid unit");
+        done();
+      });
+  });
+  test("GET /api/convert?input=3/7.2/4kg", (done) => {
     chai
       .request(server)
       .get("/api/convert?input=3/7.2/4kg")
@@ -45,7 +42,6 @@ suite('Functional Tests', function() {
         done();
       });
   });
-
   test("GET /api/convert?input=3/7.2/4kilomegagram", (done) => {
     chai
       .request(server)
@@ -56,7 +52,6 @@ suite('Functional Tests', function() {
         done();
       });
   });
-
   test("GET /api/convert?input=kg", (done) => {
     chai
       .request(server)
@@ -73,7 +68,4 @@ suite('Functional Tests', function() {
         done();
       });
   });
-  
-
-
 });

@@ -1,14 +1,16 @@
-const chai = require('chai');
+const chai = require("chai");
 let assert = chai.assert;
-const ConvertHandler = require('../controllers/convertHandler.js');
+const ConvertHandler = require("../controllers/convertHandler.js");
 
 let convertHandler = new ConvertHandler();
 
-suite('Unit Tests', function(){
+suite("Unit Tests", function () {
   test("Testing valid whole number input", () => {
     assert.strictEqual(
-      convertHandler.getNum("2kg"), 2, "Correctly read valid whole number input"
-      );
+      convertHandler.getNum("2kg"),
+      2,
+      "Correctly read valid whole number input"
+    );
   });
   test("Testing valid decimal input", () => {
     assert.strictEqual(
@@ -149,7 +151,7 @@ suite('Unit Tests', function(){
     );
   });
 
-   test("Converting gal to L", () => {
+  test("Converting gal to L", () => {
     assert.strictEqual(
       convertHandler.convert(2, "gal"),
       7.57082,
@@ -191,6 +193,8 @@ suite('Unit Tests', function(){
       "Correctly convert 2kg to 4.40925lbs"
     );
   });
-  
 
+  // test("Correctly make conversions", () => {
+
+  // });
 });
