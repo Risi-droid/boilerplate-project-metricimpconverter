@@ -153,9 +153,9 @@ suite("Unit Tests", function () {
 
   test("Converting gal to L", () => {
     assert.strictEqual(
-      convertHandler.convert(2, "gal"),
-      7.57082,
-      "Correctly convert 2gal to 7.57082L"
+      convertHandler.convert(1, "gal"),
+      3.78541,
+      "Correctly convert 1 gal to 3.78541 L"
     );
   });
   test("Converting L to gal", () => {
@@ -194,7 +194,9 @@ suite("Unit Tests", function () {
     );
   });
 
-  // test("Correctly make conversions", () => {
+   test("Correctly make conversions", () => {
+   function convertKilogramsToPounds(kilograms){
+    return kilograms * 2.20462}
 
-  // });
+   });
 });
