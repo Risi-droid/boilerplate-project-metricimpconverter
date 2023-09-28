@@ -194,9 +194,8 @@ suite("Unit Tests", function () {
     );
   });
 
-   test("Correctly make conversions", () => {
-   function convertKilogramsToPounds(kilograms){
-    return kilograms * 2.20462}
-
-   });
+//   test("Correctly make conversions", () => {
+//
+//
+//   });
 });
